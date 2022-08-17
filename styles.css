@@ -12,16 +12,16 @@ body {
     display: grid;
     grid-template-areas:
         "title title"
-        "pfp chat"
-        "chat-list mainchat";
+        "pfp ch"
+        "chat-list mc";
     grid-template-rows: 5vh 8vh 87vh;
     grid-template-columns: 1fr 2fr;
     overflow-y: auto
 }
 
-.grid>* {
+/* .grid>* {
     border: 1px solid grey;
-}
+} */
 
 .title-bar {
     grid-area: title;
@@ -76,7 +76,8 @@ img#logo {
 
 }
 
-.profile button {
+.profile button,
+.chatheader button {
     margin-right: 30px;
     border: none;
     background-color: #EFEFEF;
@@ -85,19 +86,75 @@ img#logo {
 .chat-list {
     grid-area: chat-list;
     overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
 }
 
 .chat {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 80px;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 0.7em; */
+}
+
+
+.chat:nth-child(2),
+chat:nth-child(3) {
+    margin-top: 1em;
+}
+
+.chat:nth-child(3) {
+    align-items: flex-end;
+}
+
+.chat div {
+    width: 12rem;
+}
+
+.chat p {
+    /* margin-top: 0.7em;
+    margin-right: 0.5em; */
+}
+
+.chat p:nth-child(1) {
+    font-weight: 600;
+}
+
+.chat p:nth-child(2) {
+    opacity: 0.75;
+}
+
+
+.chat p:nth-child(3) {
+    opacity: 0.3;
+    text-align: end;
+
+}
+
+hr {
+    width: 77%;
+    float: right;
 }
 
 
 
 
+.chatheader {
+    grid-area: ch;
+    background-color: #EFEFEF;
+    border-left: 1px solid #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.chatheader div {
+    width: 15rem;
+}
 
 .mainchat {
-    grid-area: mainchat;
+    grid-area: mc;
+    background-image: url(./images/default_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
