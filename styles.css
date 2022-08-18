@@ -13,15 +13,12 @@ body {
     grid-template-areas:
         "title title"
         "pfp ch"
-        "chat-list mc";
-    grid-template-rows: 5vh 8vh 87vh;
-    grid-template-columns: 1fr 2fr;
+        "chat-list mc"
+        "chat-list mc-type";
+    grid-template-rows: 5vh 8vh 79vh 8vh;
+    grid-template-columns: minmax(315px, 1fr) 2fr;
     overflow-y: auto
 }
-
-/* .grid>* {
-    border: 1px solid grey;
-} */
 
 .title-bar {
     grid-area: title;
@@ -83,39 +80,51 @@ img#logo {
     background-color: #EFEFEF;
 }
 
+.search {
+    background-color: #FCFCFC;
+    height: 3rem;
+}
+
+.bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.5px solid gray;
+    padding-left: 1em;
+}
+
+.bar input {
+    width: 93%;
+    height: auto;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    position: relative;
+
+}
+
 .chat-list {
     grid-area: chat-list;
     overflow-y: scroll;
 }
 
 .chat {
-    /* border: 1px solid black; */
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
-    /* gap: 0.7em; */
+    align-items: center;
+
 }
 
-
-.chat:nth-child(2),
-chat:nth-child(3) {
+.chat:nth-child(2) {
     margin-top: 1em;
 }
 
-.chat:nth-child(3) {
-    align-items: flex-end;
-}
-
 .chat div {
-    width: 12rem;
+    width: 50%;
 }
 
-.chat p {
-    /* margin-top: 0.7em;
-    margin-right: 0.5em; */
-}
 
-.chat p:nth-child(1) {
+.contact {
     font-weight: 600;
 }
 
@@ -127,11 +136,13 @@ chat:nth-child(3) {
 .chat p:nth-child(3) {
     opacity: 0.3;
     text-align: end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
 
 }
 
 hr {
-    width: 77%;
+    width: 75%;
     float: right;
 }
 
@@ -144,17 +155,52 @@ hr {
     border-left: 1px solid #EAEAEA;
     display: flex;
     justify-content: space-between;
-    gap: 10rem;
+    /* align-items: center; */
 }
 
-.chatheader div {
-    width: 15rem;
+
+.active-contact {
+    width: 80%;
+    align-self: center;
+
 }
+
+.right-header {
+    text-align: end;
+    align-self: center;
+}
+
+
+/* .chatheader div {
+    width: 15rem;
+} */
 
 .mainchat {
     grid-area: mc;
     background-image: url(./images/default_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
 
+
+.chat-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.chat-type {
+    grid-area: mc-type;
+    background-color: #F5F2EE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-type input {
+    width: 90%;
+    height: 30px;
+}
+
+.chat-type i {
+    padding: 20px;
 }
