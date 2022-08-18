@@ -15,7 +15,7 @@ body {
         "pfp ch"
         "chat-list mc"
         "chat-list mc-type";
-    grid-template-rows: 5vh 8vh 79vh 8vh;
+    grid-template-rows: 35px 53px 79vh 69px;
     grid-template-columns: minmax(315px, 1fr) 2fr;
     overflow-y: auto
 }
@@ -171,22 +171,65 @@ hr {
 }
 
 
-/* .chatheader div {
-    width: 15rem;
-} */
+/* MAIN CHAT SECTION */
 
 .mainchat {
     grid-area: mc;
-    background-image: url(./images/default_bg.png);
+    background-image: url(./images/default_bg2.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-y: scroll;
 }
-
 
 .chat-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: scroll;
 }
+
+.chat-content p {
+    display: inline;
+}
+
+.chat-content .msg-other {
+    background-color: #FFFFFF;
+    border-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: fit-content;
+    max-width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-content .msg-me {
+    background-color: #EBE5DF;
+    border-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: fit-content;
+    max-width: 70%;
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.msg-img {
+    width: 100%;
+}
+
+.time {
+    font-size: small;
+    opacity: 40%;
+    align-self: center;
+    margin-left: 10px;
+}
+
+
+/* THIS IS FOR THE LOWEST GRID ITEM _ WHERE USER TYPES */
 
 .chat-type {
     grid-area: mc-type;
